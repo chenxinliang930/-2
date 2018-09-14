@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="findinput">
+    <ul class="todo-content">
+        <li class="todo-ltem">
+            <div class="todo-tip">
+                <p>fhasjfas</p>
+            </div>
+            <div class="todo-btnlist">
+                <button class="btn-finish">完成</button>
+                <button class="btn-finish">修改</button>
+                <button class="btn-finish">删除</button>
+            </div>
+        </li>
+        <li class="todo-ltem">
+            <div class="todo-tip">
+                <p>fhasjfas</p>
+            </div>
+            <div class="todo-btnlist">
+                <button class="btn-finish">完成</button>
+                <button class="btn-finish">修改</button>
+                <button class="btn-finish">删除</button>
+            </div>
+        <li class="todo-ltem">
+            <div class="todo-tip">
+                <p>你好</p>
+            </div>
+            <div class="todo-btnlist">
+                <button class="btn-finish">完成</button>
+                <button class="btn-finish">修改</button>
+                <button class="btn-finish">删除</button>
+            </div>
+        <li class="todo-ltem">
+            <div class="todo-tip">
+                <p>你好啊</p>
+            </div>
+            <div class="todo-btnlist">
+                <button class="btn-finish">完成</button>
+                <button class="btn-finish">修改</button>
+                <button class="btn-finish">删除</button>
+            </div>
+        </li>
+    </ul>
+    <script src="./jquery.js"></script>
+    <script>
+        $('#findinput').keydown(function (event) {
+            if (event.keyCode == 13) {
+                var keyword = $(this).val()
+                // alert(keyword)
+                $('li').hide()//将原有的内容隐藏
+                //然后将含有keyword的li进行渐变显示
+                $("p").filter(":Contains(" + keyword + ")").parents('.todo-ltem').fadeIn(2000)
+            }
+        })
+    </script>
+</body>
+
+</html>
